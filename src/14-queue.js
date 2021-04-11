@@ -30,6 +30,7 @@ class Queue {
       this.qSize = 1;
     } else {
       this.tail.next = new ListNode(element);
+      this.tail = this.tail.next;
       this.qSize++;
     }
   }
@@ -38,7 +39,7 @@ class Queue {
     if (this.size === 0) {
       return undefined;
     }
-    const top = this.head;
+    const top = this.head.value;
     this.head = this.head.next;
     this.qSize--;
     return top;
